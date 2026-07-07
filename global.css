@@ -1,4 +1,4 @@
-* {
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,14 +6,14 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #1c1c1e;
-  color: #ffffff;
+  background-color: var(--tg-theme-bg-color, #1c1c1e);
+  color: var(--tg-theme-text-color, #ffffff);
   overflow-x: hidden;
 }
 
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: var(--tg-theme-bg-color, linear-gradient(135deg, #1a1a2e 0%, #16213e 100%));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,6 +31,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .user-info {
@@ -80,6 +81,7 @@ body {
   border-radius: 20px;
   padding: 25px;
   text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .game-title {
@@ -104,6 +106,7 @@ body {
   position: relative;
   overflow: hidden;
   border: 3px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .roulette-window {
@@ -116,6 +119,7 @@ body {
   font-weight: bold;
   position: relative;
   z-index: 2;
+  color: #fff;
 }
 
 .roulette-window.spinning {
@@ -188,6 +192,7 @@ body {
 .bet-btn.selected {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  border: 2px solid #fff;
 }
 
 .bet-amount {
@@ -208,6 +213,7 @@ body {
 
 .select-bet:hover {
   background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .select-bet span {
@@ -242,16 +248,22 @@ body {
   box-shadow: 0 6px 24px rgba(245, 87, 108, 0.6);
 }
 
+.play-btn:active {
+  transform: translateY(0);
+}
+
 .play-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
 }
 
 .game-history {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .game-history h3 {
@@ -265,6 +277,11 @@ body {
   gap: 10px;
   overflow-x: auto;
   padding-bottom: 10px;
+  scrollbar-width: none;
+}
+
+.history-list::-webkit-scrollbar {
+  display: none;
 }
 
 .history-item {
@@ -355,8 +372,4 @@ body {
     font-size: 20px;
   }
 
-  .play-btn {
-    padding: 16px;
-    font-size: 18px;
-  }
-}
+"  .play-btn {\n    padding: 16px;\n    font-size: 18px;\n  }\n}\n\n/* ========================================\n   Profile Page Styles (Dating App Style)\n   ======================================== */\n\n/* Profile Page Container */\n.profile-page {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n  background: var(--tg-theme-bg-color, #1c1c1e);\n  padding: 20px;\n  padding-bottom: 120px; /* Space for bottom action bar */\n}\n\n/* Header Styles */\n.header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 16px 20px;\n  background: rgba(255, 255, 255, 0.05);\n  border-radius: 16px;\n  margin-bottom: 24px;\n  backdrop-filter: blur(10px);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n}\n\n.back-btn {\n  width: 44px;\n  height: 44px;\n  border: none;\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.3s;\n  color: #fff;\n}\n\n.back-btn:hover {\n  background: rgba(255, 255, 255, 0.2);\n  transform: scale(1.05);\n}\n\n.header-title {\n  font-size: 18px;\n  font-weight: 600;\n  color: #fff;\n  margin: 0;\n}\n\n.header-placeholder {\n  width: 44px;\n}\n\n/* Main Content */\n.main-content {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n\n/* Profile Card Styles */\n.profile-card {\n  background: rgba(255, 255, 255, 0.03);\n  border-radius: 24px;\n  overflow: hidden;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n}\n\n/* Photo Container with Navigation */\n.photo-container {\n  position: relative;\n  width: 100%;\n  height: 400px;\n  background: #000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n}\n\n.photo-nav {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 56px;\n  height: 56px;\n  border: none;\n  background: rgba(0, 0, 0, 0.5);\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  z-index: 10;\n  transition: all 0.3s;\n  color: #fff;\n}\n\n.photo-nav:hover {\n  background: rgba(0, 0, 0, 0.7);\n  transform: translateY(-50%) scale(1.1);\n}\n\n.photo-nav-left {\n  left: 16px;\n}\n\n.photo-nav-right {\n  right: 16px;\n}\n\n.photo-wrapper {\n  width: 100%;\n  height: 100%;\n}\n\n.profile-photo {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center;\n}\n\n/* Photo Overlay */\n.photo-overlay {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 24px;\n  pointer-events: none;\n}\n\n.name-age-badge {\n  background: rgba(0, 0, 0, 0.6);\n  backdrop-filter: blur(8px);\n  border-radius: 12px;\n  padding: 12px 24px;\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  margin-bottom: 12px;\n}\n\n.name {\n  font-size: 28px;\n  font-weight: 600;\n  color: #fff;\n}\n\n.age {\n  font-size: 20px;\n  color: #fff;\n}\n\n.location-badge {\n  background: rgba(0, 0, 0, 0.6);\n  backdrop-filter: blur(8px);\n  border-radius: 8px;\n  padding: 8px 16px;\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.9);\n}\n\n/* Profile Bio */\n.profile-bio {\n  padding: 20px;\n}\n\n.bio-text {\n  font-size: 15px;\n  line-height: 1.6;\n  color: rgba(255, 255, 255, 0.8);\n  margin: 0;\n}\n\n/* Interests Section */\n.interests-section {\n  background: rgba(255, 255, 255, 0.03);\n  border-radius: 24px;\n  padding: 24px;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n}\n\n.interests-title {\n  font-size: 20px;\n  font-weight: 600;\n  color: #fff;\n  margin: 0 0 16px 0;\n}\n\n.interests-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 12px;\n}\n\n.interest-tag {\n  padding: 12px 16px;\n  border-radius: 12px;\n  font-size: 15px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.3s;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.interest-tag.outline {\n  background: rgba(255, 255, 255, 0.05);\n  color: #fff;\n  border: 1px solid rgba(255, 255, 255, 0.2);\n}\n\n.interest-tag.outline:hover {\n  background: rgba(255, 255, 255, 0.1);\n  border-color: rgba(255, 255, 255, 0.4);\n}\n\n.interest-tag.selected {\n  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);\n  color: #fff;\n  box-shadow: 0 4px 12px rgba(245, 87, 108, 0.4);\n}\n\n.interest-tag.selected:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 16px rgba(245, 87, 108, 0.6);\n}\n\n/* Action Bar Styles */\n.action-bar {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: rgba(255, 255, 255, 0.05);\n  backdrop-filter: blur(10px);\n  border-top: 1px solid rgba(255, 255, 255, 0.1);\n  padding: 16px 20px 24px;\n  z-index: 100;\n}\n\n.action-hints {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 16px;\n}\n\n.hint-text {\n  font-size: 13px;\n  color: rgba(255, 255, 255, 0.6);\n}\n\n.action-buttons {\n  display: flex;\n  justify-content: space-between;\n  gap: 16px;\n}\n\n.action-btn {\n  width: 72px;\n  height: 72px;\n  border-radius: 50%;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.3s;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);\n}\n\n.action-btn:hover {\n  transform: scale(1.05);\n}\n\n.action-btn:active {\n  transform: scale(0.95);\n}\n\n.dislike-btn {\n  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);\n  color: #fff;\n  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);\n}\n\n.dislike-btn:hover {\n  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.6);\n}\n\n.like-btn {\n  background: linear-gradient(135deg, #facc15 0%, #eab308 100%);\n  color: #fff;\n  box-shadow: 0 6px 20px rgba(250, 204, 21, 0.4);\n}\n\n.like-btn:hover {\n  box-shadow: 0 8px 24px rgba(250, 204, 21, 0.6);\n}\n\n/* Responsive Styles for Profile Page */\n@media (max-width: 480px) {\n  .profile-page {\n    padding: 16px;\n    padding-bottom: 110px;\n  }\n\n  .header {\n    padding: 14px 16px;\n    margin-bottom: 20px;\n  }\n\n  .header-title {\n    font-size: 16px;\n  }\n\n  .photo-container {\n    height: 350px;\n  }\n\n  .photo-nav {\n    width: 48px;\n    height: 48px;\n  }\n\n  .photo-nav-left {\n    left: 12px;\n  }\n\n  .photo-nav-right {\n    right: 12px;\n  }\n\n  .name-age-badge {\n    padding: 10px 20px;\n  }\n\n  .name {\n    font-size: 24px;\n  }\n\n  .age {\n    font-size: 18px;\n  }\n\n  .profile-bio {\n    padding: 16px;\n  }\n\n  .interests-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n\n  .interest-tag {\n    padding: 10px 14px;\n    font-size: 14px;\n  }\n\n  .action-bar {\n    padding: 14px 16px 20px;\n  }\n\n  .action-btn {\n    width: 64px;\n    height: 64px;\n  }\n\n  .action-buttons {\n    gap: 12px;\n  }\n}\n\n@media (max-width: 360px) {\n  .profile-page {\n    padding: 14px;\n    padding-bottom: 100px;\n  }\n\n  .name {\n    font-size: 22px;\n  }\n\n  .interests-grid {\n    grid-template-columns: 1fr 1fr;\n  }\n\n  .photo-container {\n    height: 320px;\n  }\n}\n"}

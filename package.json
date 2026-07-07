@@ -19,5 +19,17 @@
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^6.0.3",
     "vite": "^7.3.6"
-  }
+  },
+  "description": "Cyber Roulette - Telegram Mini App",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izi-izi077/swipiclav-fresh.git"
+  },
+  "keywords": ["telegram", "tma", "roulette"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/izi-izi077/swipiclav-fresh/issues"
+  },
+  "homepage": "https://github.com/izi-izi077/swipiclav-fresh#readme"
 }

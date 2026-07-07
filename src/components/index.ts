@@ -1,1 +1,1 @@
-export { default as App } from '../App';
+"export { default as App } from '../App';\nexport { default as ProfilePage } from '../ProfilePage';\nexport { default as Header } from '../components/Header';\nexport { default as ProfileCard } from '../components/ProfileCard';\nexport { default as InterestsGrid } from '../components/InterestsGrid';\nexport { default as ActionBar } from '../components/ActionBar';"
