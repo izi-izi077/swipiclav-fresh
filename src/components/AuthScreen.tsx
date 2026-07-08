@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import TelegramWebApp from '@twa-dev/sdk'
 
 /**
  * AuthScreen - Экран авторизации
@@ -77,18 +76,12 @@ const AuthScreen: React.FC<{ onAuthSuccess: () => void }> = ({ onAuthSuccess }) 
             }, 1500)
           }
         } else {
-          // Если данные пользователя отсутствуют, показываем окно авторизации
-          tg.showRequestPopup().then((user) => {
-            if (user) {
-              console.log('New user authorized:', user)
-              setIsLoading(false)
-              onAuthSuccess()
-            }
-          }).catch((err) => {
-            console.error('Authorization popup error:', err)
-            setError('Не удалось авторизоваться через Telegram')
+          // Если данные пользователя отсутствуют, имитируем авторизацию
+          console.log('Simulating Telegram authorization...')
+          setTimeout(() => {
             setIsLoading(false)
-          })
+            onAuthSuccess()
+          }, 1500)
         }
       }
     } catch (err) {

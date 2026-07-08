@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import TelegramWebApp from '@twa-dev/sdk'
 
 // Типы данных для карточки
 interface CardData {

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import TelegramWebApp from '@twa-dev/sdk'
 
 /**
  * ProfileSetupScreen - Экран настройки профиля
@@ -13,7 +12,6 @@ interface ProfileSetupScreenProps {
     age?: number
     location?: string
     bio?: string
-    photo?: string
   }
 }
 
@@ -25,7 +23,6 @@ const ProfileSetupScreen: React.FC<ProfileSetupScreenProps> = ({
   const [age, setAge] = useState(initialData?.age?.toString() || '')
   const [location, setLocation] = useState(initialData?.location || '')
   const [bio, setBio] = useState(initialData?.bio || '')
-  const [photo, setPhoto] = useState(initialData?.photo || '')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [previewImage, setPreviewImage] = useState<string | null>(null)
@@ -60,9 +57,6 @@ const ProfileSetupScreen: React.FC<ProfileSetupScreenProps> = ({
         if (!initialData?.name && user.first_name) {
           setName(user.first_name)
         }
-        if (!initialData?.photo && user.photo_url) {
-          setPhoto(user.photo_url)
-        }
       }
     }
   }, [initialData])
@@ -73,7 +67,6 @@ const ProfileSetupScreen: React.FC<ProfileSetupScreenProps> = ({
       const reader = new FileReader()
       reader.onloadend = () => {
         setPreviewImage(reader.result as string)
-        setPhoto(reader.result as string)
       }
       reader.readAsDataURL(file)
     }
